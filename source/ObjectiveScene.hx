@@ -7,7 +7,8 @@ class ObjectiveScene
 
 	public var jsonData:ObjectiveJsonData = null;
 
-	public function new() {
+	public function new()
+	{
 		trace('new objective scene');
 	}
 
@@ -15,10 +16,17 @@ class ObjectiveScene
 	{
 		this.jsonData = jsonData;
 
-		for (obj in objects)
+		try
 		{
-			objects.remove(obj);
-			obj.destroy();
+			for (obj in objects)
+			{
+				objects.remove(obj);
+				obj.destroy();
+			}
+		}
+		catch (e)
+		{
+			trace(e);
 		}
 
 		objects = [];

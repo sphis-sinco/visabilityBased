@@ -22,7 +22,7 @@ class GameState extends FlxState
 
 		scene = new ObjectiveScene();
 
-		for (objective in new ZipFileSystem({}).readDirectory('assets/data/$file_prefix_path'))
+		for (objective in new ZipFileSystem({modRoot: null}).readDirectory('assets/data/$file_prefix_path'))
 		{
 			if (Path.extension(objective) == 'json')
 				objectives.push(Path.withoutExtension(objective));
