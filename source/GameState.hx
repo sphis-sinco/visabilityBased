@@ -11,7 +11,7 @@ import flixel.FlxState;
 
 class GameState extends FlxState
 {
-	var scene:ObjectiveScene = new ObjectiveScene();
+	var scene:ObjectiveScene;
 
 	var file_prefix_path:String = 'tutorial/';
 	var objectives:Array<String> = [];
@@ -19,6 +19,8 @@ class GameState extends FlxState
 	override public function create()
 	{
 		super.create();
+
+		scene = new ObjectiveScene();
 
 		for (objective in new ZipFileSystem({}).readDirectory('assets/data/$file_prefix_path'))
 		{

@@ -5,9 +5,11 @@ class ObjectiveScene
 {
 	public var objects:Array<Object> = [];
 
-	public var jsonData:ObjectiveJsonData;
+	public var jsonData:ObjectiveJsonData = null;
 
-	public function new() {}
+	public function new() {
+		trace('new objective scene');
+	}
 
 	public function load(jsonData:ObjectiveJsonData)
 	{
