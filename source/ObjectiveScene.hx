@@ -7,11 +7,6 @@ class ObjectiveScene
 
 	public var jsonData:ObjectiveJsonData = null;
 
-	public function new()
-	{
-		trace('new objective scene');
-	}
-
 	public function load(jsonData:ObjectiveJsonData)
 	{
 		this.jsonData = jsonData;
