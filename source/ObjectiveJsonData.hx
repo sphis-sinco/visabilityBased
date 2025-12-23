@@ -1,9 +1,13 @@
+import flixel.util.FlxColor;
+import Object.ObjectAlignment;
+import flixel.util.typeLimit.OneOfTwo;
+
 typedef ObjectiveJsonData = {
     objective:String,
     options:Array<{
         object:String,
-        alignment:Int,
+        alignment:OneOfTwo<Int, ObjectAlignment>,
 
-        ?tint:String
+        ?tint:OneOfTwo<String, FlxColor>
     }>
 }

@@ -1,7 +1,8 @@
+import flixel.FlxG;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.FlxSprite;
 
-enum abstract ObjectAlignment(Int)
+enum abstract ObjectAlignment(Int) from Int to Int
 {
 	var LEFT = 0;
 	var CENTER = 1;
@@ -10,19 +11,19 @@ enum abstract ObjectAlignment(Int)
 
 class Object extends FlxSprite
 {
-    public var alignment:ObjectAlignment;
-    
+	public var alignment:ObjectAlignment;
+
 	override public function new(object:String, alignment:ObjectAlignment)
 	{
 		super();
 
-        loadObject(object);
+		loadObject(object);
 		setAlignment(alignment);
 	}
 
 	public function loadObject(object:String)
 	{
-		var atlas = FlxAtlasFrames.fromSparrow('assets/images/$object.png', 'assets/images/$object.xml');
+		frames = FlxAtlasFrames.fromSparrow('assets/images/$object.png', 'assets/images/$object.xml');
 		animation.addByPrefix('anim', object, 24);
 		animation.play('anim');
 
@@ -31,16 +32,17 @@ class Object extends FlxSprite
 
 	public function setAlignment(alignment:ObjectAlignment)
 	{
-        this.alignment = alignment;
+		this.alignment = alignment;
 
-		screenCenter();
+		screenCenter(Y);
 		switch (alignment)
 		{
 			case LEFT:
-				this.x -= width / 2;
+				this.x = this.width / 2;
 			case RIGHT:
-				this.x += width / 2;
+				this.x = FlxG.width - this.width / 2;
 			default:
+				screenCenter(X);
 		}
 	}
 }
