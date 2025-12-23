@@ -33,5 +33,7 @@ class ObjectiveScene
 
 			objects.push(object);
 		}
+
+		trace('Objective: ' + this.jsonData.objective);
 	}
 }

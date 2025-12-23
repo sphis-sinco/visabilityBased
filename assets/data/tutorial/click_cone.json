@@ -1,0 +1,17 @@
+{
+    "objective": "Click the Cone",
+    "options": [
+        {
+            "object": "Cone",
+            "alignment": 0
+        },
+        {
+            "object": "Cone",
+            "alignment": 1
+        },
+        {
+            "object": "Cone",
+            "alignment": 2
+        }
+    ]
+}

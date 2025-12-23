@@ -1,0 +1,18 @@
+{
+    "objective": "Click the Blue Cone",
+    "options": [
+        {
+            "object": "Cone",
+            "alignment": 0
+        },
+        {
+            "object": "Cone",
+            "alignment": 1
+        },
+        {
+            "object": "Cone",
+            "alignment": 2,
+            "tint": "0x0000FF"
+        }
+    ]
+}
