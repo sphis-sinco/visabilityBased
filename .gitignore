@@ -2,3 +2,5 @@ export/
 .haxelib/
 dump/
 .DS_Store
+
+.dev/**/**.zip
